@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Navbar } from '../components/Navbar'
 
 export default async function AuthButton() {
   const supabase = createClient();

@@ -1,11 +1,8 @@
-import Link from "next/link";
 import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "./submit-button";
-import AuthButton from "../../components/AuthButton";
 import '../styles/login.css';
-
 
 export default function Login({
   searchParams,
@@ -28,7 +25,7 @@ export default function Login({
       return redirect("/login?message=Could not authenticate user");
     }
 
-    return redirect("/protected");
+    return redirect("/");
   };
 
   const signUp = async (formData: FormData) => {
@@ -54,27 +51,9 @@ export default function Login({
     return redirect("/login?message=Check email to continue sign in process");
   };
 
-  const canInitSupabaseClient = () => {
-    // This function is just for the interactive tutorial.
-    // Feel free to remove it once you have Supabase connected.
-    try {
-      createClient();
-      return true;
-    } catch (e) {
-      return false;
-    }
-  };
-
-  const isSupabaseConnected = canInitSupabaseClient();
-
+  
   return (
     <div>
-      <nav>
-        <a href="/">Home</a>
-        {isSupabaseConnected && <AuthButton />}
-        <div className="animation start-login"></div>
-      </nav>
-
       <form>
         <label htmlFor="email"> Email</label>
         <input name="email" placeholder="you@example.com" required/>
