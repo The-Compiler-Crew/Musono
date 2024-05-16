@@ -54,14 +54,14 @@ export default function Login({
   
   return (
     <div>
-      <form>
+      <div id="message">{searchParams?.message && (<p> {searchParams.message} </p>)}</div>
+      <form id="login">
         <label htmlFor="email"> Email</label>
         <input name="email" placeholder="you@example.com" required/>
         <label htmlFor="password"> Password </label>
         <input type="password" name="password" placeholder="••••••••" required/>
         <SubmitButton formAction={signIn} pendingText="Signing In..."> Sign In </SubmitButton>
         <SubmitButton formAction={signUp} pendingText="Signing Up..."> Sign Up </SubmitButton>
-        {searchParams?.message && (<p> {searchParams.message} </p>)}
       </form>
     </div>
   );

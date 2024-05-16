@@ -1,4 +1,4 @@
-form {
+#login {
     text-align: center;
     height: 520px;
     width: 400px;
@@ -14,21 +14,21 @@ form {
     padding: 50px 35px;
 }
 
-form * {
+#login * {
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
 
-label {
+#login label {
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
 }
 
-input {
+#login input {
     display: block;
     height: 50px;
     width: 100%;
@@ -44,7 +44,7 @@ input {
     color: #e5e5e5;
 }
 
-button {
+#login button {
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -54,4 +54,8 @@ button {
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#message {
+    text-align: center;
 }

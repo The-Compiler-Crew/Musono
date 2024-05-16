@@ -1,4 +1,4 @@
-import AuthButton from "./AuthButton";
+import { AuthButton } from "./AuthButton";
 import { createClient } from "@/utils/supabase/server";
 
 const canInitSupabaseClient = () => {

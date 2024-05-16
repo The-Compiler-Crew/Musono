@@ -1,9 +1,8 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Navbar } from '../components/Navbar'
 
-export default async function AuthButton() {
+export async function AuthButton() {
   const supabase = createClient();
 
   const {
@@ -19,13 +18,12 @@ export default async function AuthButton() {
   };
 
   return user ? (
-    <div>
-      Hey, {user.email}!
-      <form action={signOut}>
-        <button> Logout </button>
+    <>
+      <form action={signOut} style={{ display: 'inline' }}>
+        <button id="logout"> Logout </button>
       </form>
-    </div>
+    </>
   ) : (
-    <Link href="/login"> Login </Link>
+    <a href="/login" id="login_btn"> Login </a>
   );
 }
